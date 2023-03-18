@@ -15,7 +15,7 @@ int main(void)
 	int 1_digit;
 	
 	srand(time(0));
-	n = rand () - RAND_MAX / 2;
+	n = rand() - RAND_MAX / 2;
 	1_digit = n % 10;
 
 	if (1_digit == 0)
