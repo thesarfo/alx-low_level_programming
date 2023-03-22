@@ -1,47 +1,25 @@
-#include <stdio.h>
 #include "main.h"
-#include <math.h>
-
 /**
- * main - The entry point into the program
- * Return: - always void
- **/
+ * main - prime numbers
+ *
+ * Return: 0
+ */
 
 int main(void)
 {
-	prime_factor();
-	return (0);
-}
+	long num = 612852475143;
+	long divisor = 2;
+	long larg_prim = 0;
 
-/**
- * prime_factor - a function that prints
- * prime factors of 612852475143
- * Returns - always void
- **/
-
-void prime_factor(void)
-{
-	long num = 612852475143L;
-	long highest_PF = 0;
-	long counter;
-	long p_f;
-
-	for (counter = 1; counter <= sqrt(num); counter++)
+	while (num != 1)
 	{
-		p_f = (6 * counter) - 1;
-		if (num % p_f == 0)
+		if (num % divisor == 0)
 		{
-			if (p_f >= highest_PF)
-				highest_PF = p_f;
-
+			num = num / divisor;
+			larg_prim = divisor;
 		}
-		p_f = (6 * counter) + 1;
-		if (num % p_f == 0)
-		{
-			if (p_f >= highest_PF)
-				highest_PF = p_f;
-		}
+		divisor += 1;
 	}
-	printf("%ld\n", highest_PF);
-
+	printf("%ld\n", larg_prim);
+	return (0);
 }
