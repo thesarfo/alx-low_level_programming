@@ -1,4 +1,4 @@
- /**
+/**
  * mul - a function that multiplies two integers
  * @a: an integer parameter
  * @b: an integer parameter
