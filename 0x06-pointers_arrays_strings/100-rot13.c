@@ -1,26 +1,30 @@
 #include "main.h"
-
 /**
-* rot13 - a function that encodes a string
-* using rot13 substitution cypher
-* @s: a string parameter
-* Return:  a string
-**/
+ * rot13 - encodes a string in rot13
+ * @s: string to be encoded
+ *
+ * Return: the resulting string
+ */
 char *rot13(char *s)
 {
-	char *keys = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char *vals = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	int count = 0, j;
+	int i, j;
 
-	for (; s[count] != '\0'; count++)
+	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (j = 0; keys[j] != '\0'; j++)
+		for (j = 0; a[j] != '\0'; j++)
 		{
-			if (s[count] == keys[j])
+			if (s[i] == a[j])
 			{
-				s[count] = vals[j];
+				s[i] = b[j];
+				break;
 			}
 		}
 	}
+
 	return (s);
 }
+
+
