@@ -1,38 +1,40 @@
 #include "main.h"
 
 /**
-* _compare - the function name
-* @X: parameter of type char .
-* @Y: parameter of type char .
-* Return: int .
-*/
-int _compare(char *X, char *Y)
-{
-	while (*X++ && *Y++)
-	{
-		if (*X != *Y)
-		{
-			return (0);
-		}
-	}
-	return (*Y == '\0');
-}
-/**
-* _strstr - the function that finds the first
-* occurrence of a substring in a larger string
-* @haystack: the larger string
-* @needle: the substring
-* Return: char*
-*/
+ * _strstr - Locates a substring.
+ * @haystack: The string to be searched.
+ * @needle: The substring to be located.
+ *
+ * Return: If the substring is located - a pointer to the beginning
+ *                                       of the located substring.
+ * If the substring is not located - NULL.
+ */
+
 char *_strstr(char *haystack, char *needle)
 {
-	while (*haystack != '\0')
+	int index;
+
+	if (*needle == 0)
+		return (haystack);
+
+	while (*haystack)
 	{
-		if ((*haystack == *needle) && _compare(haystack, needle))
+		index = 0;
+
+		if (haystack[index] == needle[index])
 		{
-			return (haystack);
+			do {
+				if (needle[index + 1] == '\0')
+					return (haystack);
+
+				index++;
+
+			} while (haystack[index] == needle[index]);
 		}
+
 		haystack++;
 	}
-	return (NULL);
+
+	return ('\0');
 }
+
