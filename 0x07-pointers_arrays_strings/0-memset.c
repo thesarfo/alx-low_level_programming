@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
-* _memset - the function name
-* @s: parameter of type char* .
-* @b: parameter of type char .
-* @n: parameter of type int .
-* Return: char*
+* _memset - the function name that fills memory with a byte
+* @s: pointer to insert the constant
+* @b: constant
+* @n: maximum bytes to use
+* Return: s
 */
 char *_memset(char *s, char b, unsigned int n)
 {
