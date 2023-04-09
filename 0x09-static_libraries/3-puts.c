@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- *_puts - print a string
- * @str: string
+ *_puts - prints a string
+ * @str: string to print
  *
- * Description: print a string
- * On success: return the number of chars printed
+ * Description: prints a string
+ * On success: return the number of characters printed
  */
 void _puts(char *str)
 {

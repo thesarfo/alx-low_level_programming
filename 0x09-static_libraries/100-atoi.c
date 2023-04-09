@@ -1,9 +1,9 @@
 #include "main.h"
 /**
-* _atoi - changes ascii to int value
+* _atoi - changes ascii to int
 * @s: the string to be changed
 *
-* Return: int
+* Return: the converted int
 */
 int _atoi(char *s)
 {
